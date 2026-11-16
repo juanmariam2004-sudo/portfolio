@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Juan Mariam Joseph — Computer Science graduate, aspiring software developer and data analyst." />
+  <title>Juan Mariam Joseph | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1020;--panel:#111a30;--panel2:#151f38;--text:#edf2ff;--muted:#a6b1ca;--accent:#8b9cff;--accent2:#63dfc0;--line:rgba(255,255,255,.10);--shadow:0 20px 60px rgba(0,0,0,.25)}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 85% 0%,rgba(100,119,255,.15),transparent 34%),var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,90%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.04em;font-size:1.15rem}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:26px;align-items:center}.navlinks a{font-size:.9rem;color:var(--muted);transition:.2s}.navlinks a:hover{color:var(--text)}
+    .menu{display:none;background:none;color:var(--text);border:1px solid var(--line);padding:8px 12px;border-radius:10px}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:55px;padding:90px 0 80px}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--accent2);font-size:.83rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .dot{width:8px;height:8px;background:var(--accent2);border-radius:50%;box-shadow:0 0 14px var(--accent2)}
+    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.15;letter-spacing:-.04em}
+    h1{font-size:clamp(2.8rem,6vw,5rem);margin:20px 0 18px}h1 span{color:var(--accent)}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:650px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:12px;font-weight:700;font-size:.92rem;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:linear-gradient(120deg,#8797ff,#6b7df1);color:#0b1020;border:0}.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .hero-card{background:linear-gradient(145deg,rgba(139,156,255,.17),rgba(99,223,192,.06));border:1px solid rgba(160,174,255,.22);border-radius:28px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero-card:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(139,156,255,.15);filter:blur(3px);right:-90px;top:-90px}
+    .avatar{width:92px;height:92px;border-radius:25px;background:linear-gradient(135deg,#8b9cff,#63dfc0);display:grid;place-items:center;color:#0b1020;font:800 2.3rem Manrope;margin-bottom:25px}
+    .hero-card h3{font-size:1.35rem;margin:0 0 7px}.hero-card p{font-size:.92rem;margin:0 0 22px}
+    .mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:14px;background:rgba(7,12,27,.45);border:1px solid var(--line);border-radius:14px}.stat strong{display:block;font:800 1.2rem Manrope;color:var(--accent2)}.stat small{color:var(--muted)}
+    section{padding:78px 0;border-top:1px solid var(--line)}.section-head{margin-bottom:34px}.kicker{color:var(--accent2);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    h2{font-size:clamp(2rem,4vw,3rem);margin:8px 0 10px}.section-head p{color:var(--muted);max-width:650px;margin:0}
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px}
+    .panel p{color:var(--muted);margin-top:0}.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fact{padding:16px;background:var(--panel2);border-radius:14px}.fact small{display:block;color:var(--muted);font-size:.78rem}.fact strong{font-size:.95rem}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.skill-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.skill-card h3{font-size:1.05rem;margin:0 0 16px}.tags{display:flex;gap:9px;flex-wrap:wrap}.tag{font-size:.82rem;color:#dce3ff;background:rgba(139,156,255,.12);border:1px solid rgba(139,156,255,.2);padding:7px 11px;border-radius:9px}
+    .timeline{display:grid;gap:16px}.item{display:grid;grid-template-columns:190px 1fr;gap:24px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}.item .date{color:var(--accent2);font-size:.85rem;font-weight:700}.item h3{margin:0 0 6px;font-size:1.12rem}.item p{color:var(--muted);margin:0}.item ul{color:var(--muted);margin:10px 0 0;padding-left:18px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{background:linear-gradient(150deg,var(--panel),#10172a);border:1px solid var(--line);border-radius:20px;padding:25px;display:flex;flex-direction:column;min-height:260px;transition:.2s}.project:hover{transform:translateY(-4px);border-color:rgba(139,156,255,.5)}.project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.project-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(139,156,255,.14);font-size:1.2rem}.project-type{font-size:.75rem;color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.project h3{font-size:1.25rem;margin:0 0 9px}.project p{color:var(--muted);font-size:.92rem;margin:0 0 18px}.project .tags{margin-top:auto}
+    .contact-box{background:linear-gradient(120deg,rgba(139,156,255,.15),rgba(99,223,192,.08));border:1px solid rgba(139,156,255,.25);border-radius:24px;padding:38px;display:flex;align-items:center;justify-content:space-between;gap:25px}.contact-box p{color:var(--muted);margin:8px 0 0;max-width:580px}
+    footer{padding:28px 0;color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;min-height:auto;padding:70px 0}.hero-card{max-width:500px}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#10172a;padding:20px 5%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}}
+    @media(max-width:560px){.skills,.projects{grid-template-columns:1fr}.item{grid-template-columns:1fr;gap:8px}.contact-box{align-items:flex-start;flex-direction:column}.facts{grid-template-columns:1fr 1fr}section{padding:60px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">JUAN<span>.</span></a>
+      <button class="menu" id="menuBtn" aria-label="Toggle navigation">Menu</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <section class="hero" id="home" style="border:0">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Open to opportunities</div>
+        <h1>Hi, I'm Juan<br><span>Mariam Joseph.</span></h1>
+        <p>A Computer Science and Engineering graduate with data analytics training and hands-on experience in web development. I work with Python, SQL, Excel, Power BI, Tableau, React, and blockchain technologies, and enjoy building practical solutions with data and software.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work ↗</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="avatar">JM</div>
+        <h3>Computer Science & Engineering Graduate</h3>
+        <p>Software Development · Data Analytics · Blockchain</p>
+        <div class="mini-stats">
+          <div class="stat"><strong>8.53</strong><small>B.Tech CGPA</small></div>
+          <div class="stat"><strong>8.53</strong><small>CGPA / 10</small></div>
+          <div class="stat"><strong>5</strong><small>Featured projects</small></div>
+          <div class="stat"><strong>3</strong><small>Core languages</small></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="section-head"><div class="kicker">A little about me</div><h2>Curious mind. Practical builder.</h2><p>I’m interested in technology that solves real problems, whether through software applications, data analysis, or emerging AI tools.</p></div>
+      <div class="about-grid">
+        <div class="panel"><p>I completed my B.Tech in Computer Science and Engineering at the College of Engineering Kallooppara in June 2026, with a CGPA of 8.53/10. My experience includes a web development internship, ongoing data analytics training at Zoople Technologies, and academic and portfolio projects across frontend development, blockchain, and data visualization.</p><p>I’m interested in opportunities in software development and data analytics where I can apply my technical skills, contribute to a team, and continue learning.</p></div>
+        <div class="facts">
+          <div class="fact"><small>Education</small><strong>B.Tech, Computer Science</strong></div>
+          <div class="fact"><small>CGPA</small><strong>8.53 / 10</strong></div>
+          <div class="fact"><small>Based in</small><strong>Kerala, India</strong></div>
+          <div class="fact"><small>Interests</small><strong>Software · Data · AI</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head"><div class="kicker">What I work with</div><h2>Skills & technologies</h2><p>A growing toolkit built through coursework, projects, and practical training.</p></div>
+      <div class="skills">
+        <div class="skill-card"><h3>Programming</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Java</span><span class="tag">C</span><span class="tag">R</span></div></div>
+        <div class="skill-card"><h3>Data Analysis</h3><div class="tags"><span class="tag">Data Cleaning</span><span class="tag">Data Transformation</span><span class="tag">EDA</span><span class="tag">Statistical Analysis</span></div></div>
+        <div class="skill-card"><h3>Data Science</h3><div class="tags"><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">ML Fundamentals</span></div></div>
+        <div class="skill-card"><h3>Visualization</h3><div class="tags"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span></div></div>
+        <div class="skill-card"><h3>Web & Databases</h3><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">MySQL</span></div></div>
+        <div class="skill-card"><h3>Tools & Concepts</h3><div class="tags"><span class="tag">Excel</span><span class="tag">PivotTables</span><span class="tag">Power Query</span><span class="tag">Google Colab</span><span class="tag">OOP</span><span class="tag">DBMS</span><span class="tag">SDLC</span></div></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head"><div class="kicker">Where I've learned</div><h2>Experience & education</h2></div>
+      <div class="timeline">
+        <article class="item"><div class="date">Present</div><div><h3>Data Analyst Trainee — Zoople Technologies</h3><p>Training and hands-on practice in Python, SQL, Excel, Power BI, Tableau, data cleaning, transformation, and statistical concepts.</p><ul><li>Practice SQL joins, filtering, subqueries, and aggregate functions.</li><li>Build Power BI dashboards with KPI cards, charts, and interactive slicers.</li><li>Work with Python for dataset exploration and basic data manipulation.</li></ul></div></article>
+        <article class="item"><div class="date">December 2022</div><div><h3>Web Development Intern — PACELAB Redefining Technology</h3><p>Completed an internship focused on frontend and backend web development fundamentals.</p><ul><li>Created basic web pages using HTML, CSS, and JavaScript.</li><li>Practiced responsive styling, interactive functionality, debugging, and testing.</li></ul></div></article>
+        <article class="item"><div class="date">June 2026</div><div><h3>B.Tech, Computer Science and Engineering</h3><p>College of Engineering Kallooppara · CGPA: 8.53/10</p></div></article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head"><div class="kicker">Selected work</div><h2>Projects I've built</h2><p>A selection of academic and hands-on projects across blockchain, web development, and analytics.</p></div>
+      <div class="projects">
+        <article class="project"><div class="project-top"><div class="project-icon">⛓</div><span class="project-type">Blockchain · Major project</span></div><h3>Blockchain-Based Crowdfunding Platform</h3><p>A decentralized crowdfunding platform supporting transparent fundraising, with smart contract functionality for campaign creation, donor contributions, and fund withdrawal.</p><div class="tags"><span class="tag">Blockchain</span><span class="tag">Solidity</span><span class="tag">Smart Contracts</span><span class="tag">React</span></div></article>
+        <article class="project"><div class="project-top"><div class="project-icon">▥</div><span class="project-type">Power BI</span></div><h3>Zudio Sales Dashboard</h3><p>Interactive dashboard with KPI cards, charts, slicers, and DAX measures to explore sales performance across categories and dimensions, with a navigation landing page.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Sales Analysis</span></div></article>
+        <article class="project"><div class="project-top"><div class="project-icon">▤</div><span class="project-type">Microsoft Excel</span></div><h3>Amazon E-commerce Sales Dashboard</h3><p>Used Excel functions, PivotTables, and charts to summarize e-commerce sales performance across product categories and communicate sales patterns.</p><div class="tags"><span class="tag">Excel</span><span class="tag">PivotTables</span><span class="tag">Charts</span></div></article>
+        <article class="project"><div class="project-top"><div class="project-icon">▧</div><span class="project-type">Tableau</span></div><h3>Sales Analysis Dashboard</h3><p>Analyzed sales, profit, discount, quantity, and order count, comparing regional performance and customer segments through interactive visualizations.</p><div class="tags"><span class="tag">Tableau</span><span class="tag">KPIs</span><span class="tag">Data Visualization</span></div></article>
+        <article class="project"><div class="project-top"><div class="project-icon">◈</div><span class="project-type">React · Mini project</span></div><h3>We Connect — Linktree Clone</h3><p>Designed and developed the frontend of a Linktree-inspired website with reusable UI components, responsive login and link-display interfaces, and intuitive navigation.</p><div class="tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">CSS</span></div></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box"><div><div class="kicker">Let's connect</div><h2>Have an opportunity in mind?</h2><p>I’m open to entry-level opportunities in software development, data analytics, and related technology roles. Feel free to reach out.</p></div><a class="btn primary" href="mailto:juanmariam2004@gmail.com">Email me ↗</a></div>
+      <p style="color:var(--muted);font-size:.9rem;margin:18px 4px 0">Email: <a href="mailto:juanmariam2004@gmail.com">juanmariam2004@gmail.com</a> · Phone: <a href="tel:+919562568869">+91 9562568869</a> · <a href="https://linkedin.com/in/juan-mariam" target="_blank" rel="noopener">LinkedIn profile ↗</a></p>
+      <p style="color:var(--muted);font-size:.82rem;margin:8px 4px 0">Add your GitHub profile, resume download, and live project links when ready.</p>
+    </section>
+  </div>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Juan Mariam Joseph</span><span>Designed & built with care.</span></div></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('navlinks');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+</script>
+</body>
+</html>
